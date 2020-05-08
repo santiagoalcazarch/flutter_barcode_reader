@@ -120,7 +120,8 @@ class ScanResult extends $pb.GeneratedMessage {
     ..e<ResultType>(1, 'type', $pb.PbFieldType.OE, defaultOrMaker: ResultType.Barcode, valueOf: ResultType.valueOf, enumValues: ResultType.values)
     ..aOS(2, 'rawContent', protoName: 'rawContent')
     ..e<BarcodeFormat>(3, 'format', $pb.PbFieldType.OE, defaultOrMaker: BarcodeFormat.unknown, valueOf: BarcodeFormat.valueOf, enumValues: BarcodeFormat.values)
-    ..aOS(4, 'formatNote', protoName: 'formatNote')
+    ..aOS(4, 'rawBytes', protoName: 'rawBytes')
+    ..aOS(5, 'formatNote', protoName: 'formatNote')
     ..hasRequiredFields = false
   ;
 
@@ -167,12 +168,21 @@ class ScanResult extends $pb.GeneratedMessage {
   void clearFormat() => clearField(3);
 
   @$pb.TagNumber(4)
-  $core.String get formatNote => $_getSZ(3);
+  $core.String get rawBytes => $_getSZ(3);
   @$pb.TagNumber(4)
-  set formatNote($core.String v) { $_setString(3, v); }
+  set rawBytes($core.String v) { $_setString(3, v); }
   @$pb.TagNumber(4)
-  $core.bool hasFormatNote() => $_has(3);
+  $core.bool hasRawBytes() => $_has(3);
   @$pb.TagNumber(4)
-  void clearFormatNote() => clearField(4);
+  void clearRawBytes() => clearField(4);
+
+  @$pb.TagNumber(5)
+  $core.String get formatNote => $_getSZ(4);
+  @$pb.TagNumber(5)
+  set formatNote($core.String v) { $_setString(4, v); }
+  @$pb.TagNumber(5)
+  $core.bool hasFormatNote() => $_has(4);
+  @$pb.TagNumber(5)
+  void clearFormatNote() => clearField(5);
 }
 

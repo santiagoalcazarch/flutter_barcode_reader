@@ -15,14 +15,19 @@ class ScanResult {
   /// If the format is unknown, this field holds additional information
   String formatNote;
 
+  /// Result of scan, reading in bytes
+  String rawBytes;
+
   /// Creates a new scan result
   ScanResult({
     this.type = ResultType.Barcode,
     this.rawContent = "",
     this.format = BarcodeFormat.unknown,
     this.formatNote = "",
+    this.rawBytes = "",
   })  : assert(type != null),
         assert(rawContent != null),
         assert(format != null),
-        assert(formatNote != null);
+        assert(formatNote != null),
+        assert(rawBytes != null);
 }

@@ -67,7 +67,8 @@ const ScanResult$json = const {
     const {'1': 'type', '3': 1, '4': 1, '5': 14, '6': '.ResultType', '10': 'type'},
     const {'1': 'rawContent', '3': 2, '4': 1, '5': 9, '10': 'rawContent'},
     const {'1': 'format', '3': 3, '4': 1, '5': 14, '6': '.BarcodeFormat', '10': 'format'},
-    const {'1': 'formatNote', '3': 4, '4': 1, '5': 9, '10': 'formatNote'},
+    const {'1': 'rawBytes', '3': 4, '4': 1, '5': 9, '10': 'rawBytes'},
+    const {'1': 'formatNote', '3': 5, '4': 1, '5': 9, '10': 'formatNote'},
   ],
 };
 

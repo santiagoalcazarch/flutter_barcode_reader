@@ -61,7 +61,10 @@ message ScanResult {
     string rawContent = 2;
     // The barcode format
     BarcodeFormat format = 3;
+    // Array of bytes readed, incluiding parentheses and other
+    // characters
+    string rawBytes = 4;
     // If the format is unknown, this field holds additional information
-    string formatNote = 4;
+    string formatNote = 5;
 }
 

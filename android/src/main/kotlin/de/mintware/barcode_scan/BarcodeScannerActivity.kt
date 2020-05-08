@@ -3,6 +3,7 @@ package de.mintware.barcode_scan
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import com.google.zxing.BarcodeFormat
@@ -124,11 +125,21 @@ class BarcodeScannerActivity : Activity(), ZXingScannerView.ResultHandler {
                 formatNote = result.barcodeFormat.toString()
             }
 
+            var rawByteStr = ""
+            //Log.v("", result?.toString())
+            //Log.v("", result?.numBits?.toString())
+            for( i in result?.rawBytes ){
+                //Log.v("", i.toString())
+                rawByteStr += "${i}-"
+            }
+            Log.v("", rawByteStr)
+
             builder.let {
+                it.type = Protos.ResultType.Barcode
+                it.rawContent = result.text
+                it.rawBytes = rawByteStr
                 it.format = format
                 it.formatNote = formatNote
-                it.rawContent = result.text
-                it.type = Protos.ResultType.Barcode
             }
         }
         val res = builder.build()
